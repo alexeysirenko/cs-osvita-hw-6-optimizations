@@ -1,12 +1,9 @@
+# Build directories (keep .gitkeep)
+**/build/*
+!**/build/.gitkeep
+
 # Compiled object files
 *.o
-
-# Binaries
-assembly/tests
-vec/tests
-color/bench
-color/convert
-pagecount/pagecount
 
 # macOS
 .DS_Store
