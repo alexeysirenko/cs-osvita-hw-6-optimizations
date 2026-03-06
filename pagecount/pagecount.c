@@ -65,9 +65,9 @@ uint64_t pagecount(uint64_t memory_size, uint64_t page_size) {
  * TODO: implement me.
  */
 uint64_t pagecount_fast(uint64_t memory_size, uint64_t page_size) {
-    (void)memory_size;
-    (void)page_size;
-    return 0; /* replace this */
+    // Since page_size is always a power of 2, division can be replaced
+    // with a right shift by log2(page_size).
+    return memory_size >> __builtin_ctzll(page_size);
 }
 
 /* ── Benchmarking helpers ─────────────────────────────────────────────────── */
